@@ -1,3 +1,22 @@
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 // @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap');
 @import 'custom';
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    margin-bottom: 200px;
+    // pour m'assurer que le footer ne se superpose pas sur le contenu "main". mon footer est à 162px de hauteur, 
+    // je prends donc 200px pour faire de la marge
+}
+
+footer.footer {
+    padding: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+

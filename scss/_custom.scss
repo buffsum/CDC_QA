@@ -6,6 +6,7 @@
 // Couleurs
 $primary: #B97F59;
 $secondary: #F9E7CF;
+$dark: #400404;
 
 // couleurs texte
 $body-color: #F9E7CF;
@@ -20,9 +21,37 @@ $body-bg-info: #3D5507;
 // $bg-light: #400404;
 // $bg-primary: #730202;
 
-.bg-dark {
-    background-color: $body-bg-dark !important;
-}
+
+// .bg-dark {
+//     background-color: $body-bg-dark !important;
+// }
+
+//footer 
+// .footer {
+//     background-color: $body-bg-dark !important;
+//     // color: $body-color;
+// }
+
+// .modal-footer-bg {
+//     background-color: $body-bg-dark !important;
+// }
+
+
+// .html {
+//     position: relative;
+//     min-height: 100%;
+// }
+
+// .footer {
+//     padding: 15px;
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+// }
+
+// .footer {
+//     padding: 30px;
+// }
 
 // navbar
 .navbar[data-bs-theme="dark"] {
@@ -33,7 +62,7 @@ $body-bg-info: #3D5507;
 
         &:hover {
             color: #B97F59 !important;
-            text-decoration: underline;
+            // text-decoration: underline;
             font-weight: bold;
         }
     }
@@ -85,6 +114,9 @@ p, body, a {
     color: #F9E7CF !important;
 }
 
+.text-middle {
+    vertical-align: middle !important;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 

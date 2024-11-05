@@ -1,9 +1,5 @@
 @charset "UTF-8";
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
-.bg-dark {
-  background-color: #400404 !important;
-}
-
 .navbar[data-bs-theme=dark] {
   background-color: #400404 !important;
 }
@@ -12,7 +8,6 @@
 }
 .navbar[data-bs-theme=dark] .nav-link:hover {
   color: #B97F59 !important;
-  text-decoration: underline;
   font-weight: bold;
 }
 
@@ -53,6 +48,10 @@ p, body, a {
   color: #F9E7CF !important;
 }
 
+.text-middle {
+  vertical-align: middle !important;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -90,7 +89,7 @@ p, body, a {
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+  --bs-dark: #400404;
   --bs-primary-rgb: 185, 127, 89;
   --bs-secondary-rgb: 249, 231, 207;
   --bs-success-rgb: 25, 135, 84;
@@ -98,7 +97,7 @@ p, body, a {
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 64, 4, 4;
   --bs-primary-text-emphasis: #4a3324;
   --bs-secondary-text-emphasis: #645c53;
   --bs-success-text-emphasis: #0a3622;
@@ -2084,13 +2083,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #212529;
-  --bs-table-border-color: #4d5154;
-  --bs-table-striped-bg: #2c3034;
+  --bs-table-bg: #400404;
+  --bs-table-border-color: #663636;
+  --bs-table-striped-bg: #4a1111;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #373b3e;
+  --bs-table-active-bg: #531d1d;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #323539;
+  --bs-table-hover-bg: #4e1717;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3184,19 +3183,19 @@ textarea.form-control-lg {
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
-  --bs-btn-border-color: #212529;
+  --bs-btn-bg: #400404;
+  --bs-btn-border-color: #400404;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #424649;
-  --bs-btn-hover-border-color: #373b3e;
-  --bs-btn-focus-shadow-rgb: 66, 70, 73;
+  --bs-btn-hover-bg: #5d2a2a;
+  --bs-btn-hover-border-color: #531d1d;
+  --bs-btn-focus-shadow-rgb: 93, 42, 42;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #4d5154;
-  --bs-btn-active-border-color: #373b3e;
+  --bs-btn-active-bg: #663636;
+  --bs-btn-active-border-color: #531d1d;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #212529;
-  --bs-btn-disabled-border-color: #212529;
+  --bs-btn-disabled-bg: #400404;
+  --bs-btn-disabled-border-color: #400404;
 }
 
 .btn-outline-primary {
@@ -3319,19 +3318,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #212529;
-  --bs-btn-border-color: #212529;
+  --bs-btn-color: #400404;
+  --bs-btn-border-color: #400404;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #212529;
-  --bs-btn-hover-border-color: #212529;
-  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-hover-bg: #400404;
+  --bs-btn-hover-border-color: #400404;
+  --bs-btn-focus-shadow-rgb: 64, 4, 4;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #212529;
-  --bs-btn-active-border-color: #212529;
+  --bs-btn-active-bg: #400404;
+  --bs-btn-active-border-color: #400404;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #212529;
+  --bs-btn-disabled-color: #400404;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #212529;
+  --bs-btn-disabled-border-color: #400404;
   --bs-gradient: none;
 }
 
@@ -6957,8 +6956,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(26, 30, 33, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(26, 30, 33, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(51, 3, 3, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(51, 3, 3, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -12018,4 +12017,19 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+main {
+  margin-bottom: 200px;
+}
+
+footer.footer {
+  padding: 25px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
