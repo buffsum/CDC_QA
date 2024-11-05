@@ -1,5 +1,58 @@
 @charset "UTF-8";
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+.bg-dark {
+  background-color: #400404 !important;
+}
+
+.navbar[data-bs-theme=dark] {
+  background-color: #400404 !important;
+}
+.navbar[data-bs-theme=dark] .nav-link {
+  color: #F9E7CF !important;
+}
+.navbar[data-bs-theme=dark] .nav-link:hover {
+  color: #B97F59 !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.btn-primary {
+  color: #F9E7CF !important;
+  background-color: #B97F59;
+  border-color: #B97F59;
+}
+.btn-primary:hover {
+  background-color: #c89b7d !important;
+  color: #F9E7CF;
+}
+
+.btn-secondary {
+  color: #F9E7CF !important;
+  background-color: transparent !important;
+  border: 1px solid #F9E7CF;
+}
+.btn-secondary:hover {
+  background-color: #F9E7CF !important;
+  color: #730202 !important;
+}
+
+h1, .h1 {
+  font-family: "RaSa", serif !important;
+  font-size: 2.25rem !important;
+}
+
+h2, .h2 {
+  font-family: "Nunito", sans-serif !important;
+  font-style: italic;
+  font-size: 1.25rem !important;
+}
+
+p, body, a {
+  font-family: "Montaga", serif !important;
+  font-size: 1rem !important;
+  color: #F9E7CF !important;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -72,10 +125,10 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Nunito", sans-serif, default;
+  --bs-font-sans-serif: "Nunito", sans-serif !important;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: "Montaga", serif !important;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -5732,7 +5785,7 @@ textarea.form-control-lg {
   z-index: var(--bs-tooltip-zindex);
   display: block;
   margin: var(--bs-tooltip-margin);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Montaga", serif !important;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5842,7 +5895,7 @@ textarea.form-control-lg {
   z-index: var(--bs-popover-zindex);
   display: block;
   max-width: var(--bs-popover-max-width);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Montaga", serif !important;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

@@ -7,8 +7,6 @@
 $primary: #B97F59;
 $secondary: #F9E7CF;
 
-// $bg-primary: #730202;
-
 // couleurs texte
 $body-color: #F9E7CF;
 
@@ -16,17 +14,77 @@ $body-color: #F9E7CF;
 $body-bg:#730202;
 $body-bg-dark: #400404;
 $body-bg-info: #3D5507;
-
 // $bg-body: #730202;
 // $bg-dark: #400404;
 // $bg-info: white;
 // $bg-light: #400404;
+// $bg-primary: #730202;
 
-// Font
-$font-family-sans-serif: "Nunito", sans-serif, default;
-// $body-font-family-serif: "Rasa", serif, default;
-// $body-font-family:$body-font-family-serif;
-// $body-font-family: "Rasa", serif, default;
+.bg-dark {
+    background-color: $body-bg-dark !important;
+}
+
+// navbar
+.navbar[data-bs-theme="dark"] {
+    background-color: $body-bg-dark !important;
+
+    .nav-link {
+        color: #F9E7CF !important;
+
+        &:hover {
+            color: #B97F59 !important;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+}
+
+// Font / le !important au lieu de default me permet d'assurer que ça soit la bonne police
+$font-family-sans-serif: "Nunito", sans-serif !important;
+$font-family-serif: "RaSa", serif !important;
+$font-family-base: "Montaga", serif !important;
+
+// boutons
+.btn-primary {
+    color: #F9E7CF !important;
+    background-color: #B97F59;
+    border-color: #B97F59;
+
+    &:hover {
+        background-color: lighten($primary, 10%) !important;
+        color: #F9E7CF;
+    }
+}
+
+.btn-secondary {
+    color: #F9E7CF !important;
+    background-color: transparent !important;
+    border: 1px solid #F9E7CF;
+
+    &:hover {
+        background-color: #F9E7CF !important;
+        color: #730202 !important;
+    }
+}
+
+// Fonts des textes
+h1 {
+    font-family: $font-family-serif;
+    font-size: 2.25rem !important;
+}
+
+h2 {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    font-size: 1.25rem !important;
+}
+
+p, body, a {
+    font-family: $font-family-base;
+    font-size: 1rem !important;
+    color: #F9E7CF !important;
+}
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
