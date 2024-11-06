@@ -48,10 +48,25 @@ p, body, a {
   color: #F9E7CF !important;
 }
 
-.text-middle {
-  vertical-align: middle !important;
+@media (min-width: 992px) {
+  .footer .col-lg-4 {
+    border-left: 1px solid #F9E7CF;
+  }
+  .footer .col-lg-4:first-child {
+    border-left: none;
+  }
 }
-
+@media (max-width: 991px) {
+  .footer .col-lg-4:first-child {
+    border-bottom: 1px solid #F9E7CF;
+    padding-bottom: 1rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .footer .col-6 {
+    margin-top: 1rem;
+  }
+}
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -12025,6 +12040,11 @@ html {
 
 main {
   margin-bottom: 200px;
+}
+@media (max-width: 767px) {
+  main {
+    margin-bottom: 280px;
+  }
 }
 
 footer.footer {

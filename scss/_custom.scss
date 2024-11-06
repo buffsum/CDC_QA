@@ -114,9 +114,29 @@ p, body, a {
     color: #F9E7CF !important;
 }
 
-.text-middle {
-    vertical-align: middle !important;
+// Bordures verticales sur les écrans larges
+@media (min-width: 992px) { // `lg` et au-dessus
+    .footer .col-lg-4 {
+        border-left: 1px solid $secondary; // Bordure verticale
+    }
+    .footer .col-lg-4:first-child {
+        border-left: none; // Pas de bordure à gauche du premier bloc
+    }
 }
+
+// Bordure horizontale sur les petits écrans (mobile)
+@media (max-width: 991px) { // `md` et en dessous
+    .footer .col-lg-4:first-child {
+        border-bottom: 1px solid $secondary; // Bordure horizontale sous la première colonne
+        padding-bottom: 1rem; // Espace entre la bordure et le contenu en dessous
+        width: 80%; // Ajustez cette valeur pour la longueur du séparateur
+        margin: 0 auto; // Centre le séparateur
+    }
+    .footer .col-6 {
+        margin-top: 1rem; // Espace supplémentaire au-dessus des colonnes inférieures
+    }
+}
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 

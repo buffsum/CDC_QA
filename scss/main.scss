@@ -11,6 +11,9 @@ main {
     margin-bottom: 200px;
     // pour m'assurer que le footer ne se superpose pas sur le contenu "main". mon footer est à 162px de hauteur, 
     // je prends donc 200px pour faire de la marge
+    @media (max-width: 767px) { // Ajustement pour les écrans de type mobile
+        margin-bottom: 280px; // Augmenter la marge pour les écrans mobiles
+    }
 }
 
 footer.footer {
