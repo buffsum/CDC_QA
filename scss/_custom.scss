@@ -3,7 +3,7 @@
 
 // Include any default variable overrides here (though functions won't be available)
 
-// Couleurs
+//******** Couleurs ********
 $primary: #B97F59;
 $secondary: #F9E7CF;
 $dark: #400404;
@@ -15,88 +15,14 @@ $body-color: #F9E7CF;
 $body-bg:#730202;
 $body-bg-dark: #400404;
 $body-bg-info: #3D5507;
-// $bg-body: #730202;
-// $bg-dark: #400404;
-// $bg-info: white;
-// $bg-light: #400404;
-// $bg-primary: #730202;
 
-
-// .bg-dark {
-//     background-color: $body-bg-dark !important;
-// }
-
-//footer 
-// .footer {
-//     background-color: $body-bg-dark !important;
-//     // color: $body-color;
-// }
-
-// .modal-footer-bg {
-//     background-color: $body-bg-dark !important;
-// }
-
-
-// .html {
-//     position: relative;
-//     min-height: 100%;
-// }
-
-// .footer {
-//     padding: 15px;
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-// }
-
-// .footer {
-//     padding: 30px;
-// }
-
-// navbar
-.navbar[data-bs-theme="dark"] {
-    background-color: $body-bg-dark !important;
-
-    .nav-link {
-        color: #F9E7CF !important;
-
-        &:hover {
-            color: #B97F59 !important;
-            // text-decoration: underline;
-            font-weight: bold;
-        }
-    }
-}
-
-// Font / le !important au lieu de default me permet d'assurer que ça soit la bonne police
+// ******** Fonts ********* 
+// / le !important au lieu de default me permet d'assurer que ça soit la bonne police
 $font-family-sans-serif: "Nunito", sans-serif !important;
 $font-family-serif: "RaSa", serif !important;
 $font-family-base: "Montaga", serif !important;
 
-// boutons
-.btn-primary {
-    color: #F9E7CF !important;
-    background-color: #B97F59;
-    border-color: #B97F59;
-
-    &:hover {
-        background-color: lighten($primary, 10%) !important;
-        color: #F9E7CF;
-    }
-}
-
-.btn-secondary {
-    color: #F9E7CF !important;
-    background-color: transparent !important;
-    border: 1px solid #F9E7CF;
-
-    &:hover {
-        background-color: #F9E7CF !important;
-        color: #730202 !important;
-    }
-}
-
-// Fonts des textes
+// Détails fonts des textes
 h1 {
     font-family: $font-family-serif;
     font-size: 2.25rem !important;
@@ -112,6 +38,44 @@ p, body, a {
     font-family: $font-family-base;
     font-size: 1rem !important;
     color: #F9E7CF !important;
+}
+
+//******* Menu / navbar *******
+.navbar[data-bs-theme="dark"] {
+    background-color: $body-bg-dark !important;
+
+    .nav-link {
+        color: #F9E7CF !important;
+
+        &:hover {
+            color: #B97F59 !important;
+            // text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+}
+
+//******* CONTENU MAIN *******
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    margin-bottom: 200px;
+    // pour m'assurer que le footer ne se superpose pas sur le contenu "main". mon footer est à 162px de hauteur, 
+    // je prends donc 200px pour faire de la marge
+    @media (max-width: 767px) { // Ajustement pour les écrans de type mobile
+        margin-bottom: 280px; // Augmenter la marge pour les écrans mobiles
+    }
+}
+
+//********* FOOTER ************
+footer.footer {
+    padding: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 // Bordures verticales sur les écrans larges
@@ -136,6 +100,67 @@ p, body, a {
         margin-top: 1rem; // Espace supplémentaire au-dessus des colonnes inférieures
     }
 }
+
+//******* boutons ******
+.btn-primary {
+    color: #F9E7CF !important;
+    background-color: #B97F59;
+    border-color: #B97F59;
+
+    &:hover {
+        background-color: lighten($primary, 10%) !important;
+        color: #F9E7CF;
+    }
+}
+
+.btn-secondary {
+    color: #F9E7CF !important;
+    background-color: transparent !important;
+    border: 1px solid #F9E7CF;
+
+    &:hover {
+        background-color: #F9E7CF !important;
+        color: #730202 !important;
+    }
+}
+
+//**** Big title ****
+
+// avec filtre noir
+.bigtitle {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/fond.jpg");
+        background-size: cover;
+        filter: brightness(0.6);
+    }
+
+    //pour positionner les éléments devant le "before" donc devant l'image
+    * {
+        position: relative;
+    }
+
+    .bigtitle-content {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// sans filtre
+// .bigtitle {
+//         background-image: url("../img/fond.jpg");
+//         background-size: cover;
+// }
+
 
 
 @import "../node_modules/bootstrap/scss/bootstrap";
