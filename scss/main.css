@@ -190,7 +190,7 @@ footer.footer {
 .img-card {
   position: relative;
 }
-.img-card:hover .titre-img {
+.img-card:hover .titre-img, .img-card:hover .action-img-buttons {
   opacity: 1;
 }
 .img-card:hover img {
@@ -201,6 +201,7 @@ footer.footer {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
 }
 .img-card .titre-img {
   opacity: 0;
@@ -211,6 +212,17 @@ footer.footer {
   transition: all 0.3s ease;
   font-size: 1.5rem;
   font-weight: bold;
+}
+.img-card .action-img-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .form-label {
