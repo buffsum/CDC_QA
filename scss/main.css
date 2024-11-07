@@ -2,7 +2,7 @@
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 h1, .h1 {
   font-family: "RaSa", serif !important;
-  font-size: 2.25rem !important;
+  font-size: 3rem !important;
 }
 
 h2, .h2 {
@@ -100,6 +100,7 @@ footer.footer {
   height: 100%;
   background-image: url("../img/fond.jpg");
   background-size: cover;
+  background-position: center;
   filter: brightness(0.6);
 }
 .bigtitle * {
@@ -111,6 +112,109 @@ footer.footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.home-square1 {
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/chef.jpg");
+}
+
+.home-square2 {
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/plat.jpg");
+}
+
+.home-square3 {
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/table.jpg");
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  [class*=col-] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.home-square1, .home-square2, .home-square3 {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .home-square1, .home-square2, .home-square3 {
+    height: 300px;
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-6.pt-4 {
+    padding: 2rem 1rem !important;
+  }
+  .row.bg-dark {
+    margin: 0 !important;
+  }
+}
+.row.bg-dark {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+.container .row.bg-dark {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.img-card {
+  position: relative;
+}
+.img-card:hover .titre-img {
+  opacity: 1;
+}
+.img-card:hover img {
+  filter: brightness(0.3);
+}
+.img-card img {
+  transition: all 0.3s ease;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.img-card .titre-img {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form-label {
+  color: #F9E7CF;
 }
 
 /*!
