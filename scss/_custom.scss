@@ -323,6 +323,18 @@ footer.footer {
 }
 // ****** FIN FORMULAIRE ****** //
 
+// ******* ALL RÉSA *******
+
+.allreservations{
+    a{
+        display: block;
+        // color: black;
+        padding:10px;
+    }
+}
+
+// ******* FIN ALL RÉSA *******
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
