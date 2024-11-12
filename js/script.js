@@ -1,4 +1,14 @@
+// ****** Gestion des cookies ******
 const tokenCookieName = "accesstoken";
+const signoutBtn = document.getElementById("signout-btn");
+
+signoutBtn.addEventListener("click", signout);
+
+function signout() {
+    eraseCookie(tokenCookieName);
+    // window.location.replace("/signin");
+    window.location.reload();
+}
 
 function setToken(token) {
     // le nom de mon cookie sera "accesstoken", la valeur sera le token, et il expirera dans 7 jours
@@ -49,3 +59,5 @@ if (isConnected()) {
 else {
     alert("Vous n'êtes pas connecté");
 }
+
+// ****** FIN de gestion des cookies ******
