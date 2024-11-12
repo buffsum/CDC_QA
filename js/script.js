@@ -1,15 +1,69 @@
-// ****** Gestion des cookies ******
+
 const tokenCookieName = "accesstoken";
+const roleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 
+
+
+//**** Gestion des roles + hide****/
+function getRole() {
+    return getCookie(roleCookieName);
+}
+
+function showAndHideElementsForRole() {
+    const userConnected = isConnected();
+    const role = getRole();
+
+    let allElementsToEdit = document.querySelectorAll("[data-show]");
+
+    allElementsToEdit.forEach(element => 
+        {
+        switch (element.dataset.show) {
+            case "disconnected":
+                if (userConnected) {
+                    element.classList.add("d-none"); // d-none = classe de bootstrap pour cacher un élément
+                }
+                break;
+            case "connected":
+                if (!userConnected) {
+                    element.classList.add("d-none");
+                }
+                break;
+            case "admin":
+                if (!userConnected || role != "admin") {
+                    element.classList.add("d-none");
+                }
+                break;
+            case "client":
+                if (!userConnected || role != "client") {
+                    element.classList.add("d-none");
+                }
+                break;
+        }
+    })
+} 
+
+/* roles
+disconnected
+connected (admin ou client)
+    - admin
+    - client
+*/
+
+// ****** FIN de gestion des roles ******
+
+// ****** Gestion de la déconnexion ******
 signoutBtn.addEventListener("click", signout);
 
 function signout() {
     eraseCookie(tokenCookieName);
+    eraseCookie(roleCookieName);
     // window.location.replace("/signin");
     window.location.reload();
 }
+// ****** FIN de gestion de la déconnexion ******
 
+// ****** Gestion des cookies ******
 function setToken(token) {
     // le nom de mon cookie sera "accesstoken", la valeur sera le token, et il expirera dans 7 jours
     setCookie(tokenCookieName, token, 7);
@@ -59,5 +113,4 @@ if (isConnected()) {
 else {
     alert("Vous n'êtes pas connecté");
 }
-
 // ****** FIN de gestion des cookies ******

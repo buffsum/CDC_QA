@@ -16,7 +16,8 @@ function checkCredentials(){
         setToken(token);
         //rediriger vers la page d'accueil
         window.location.replace("/");
-        // setCookie(RoleCookieName, "admin", 7); ??
+
+        setCookie(roleCookieName, "admin", 7); // Role admin
         
     }
     else{
