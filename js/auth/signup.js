@@ -20,8 +20,9 @@ function validateForm() {
     const prenomOk = validateRequired(inputPrenom);
     const mailOK = validateEmail(inputMail);
     const passwordOK = validatePassword(inputPassword);
+    const passwordConfirmOK = validateConfirmationPassword(inputPassword, inputValidatePassword);
 
-    if (nomOk && prenomOk && mailOK && passwordOK) {
+    if (nomOk && prenomOk && mailOK && passwordOK && passwordConfirmOK) {
         btnValidation.disabled = false;
     }
     else {
@@ -76,6 +77,19 @@ function validatePassword(input){
     else{
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
+        return false;
+    }
+}
+
+function validateConfirmationPassword(inputPwd, inputConfirmPwd){
+    if(inputPwd.value == inputConfirmPwd.value){
+        inputConfirmPwd.classList.add("is-valid");
+        inputConfirmPwd.classList.remove("is-invalid");
+        return true;
+    }
+    else{
+        inputConfirmPwd.classList.add("is-invalid");
+        inputConfirmPwd.classList.remove("is-valid");
         return false;
     }
 }
