@@ -52,12 +52,7 @@ function validateRequired(input) {
 // je rajoute un event listener pour connecter à mon API et géré l'inscription
 function signupUser() {
     let dataForm = new FormData(formSignup);
-
-    let name = dataForm.get("Nom");
-    // let firstname = dataForm.get("Prenom");
-    // let email = dataForm.get("Email");
-    // let password = dataForm.get("Password");
-
+    
     // const ?
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
