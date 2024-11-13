@@ -7,6 +7,7 @@ const inputMail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputValidatePassword = document.getElementById("ValidatePasswordInput");
 const btnValidation = document.getElementById("btn-validation-inscription");
+const formSignup = document.getElementById("formulaireSignup");
 
 //keyup = activé quand on relache après avoir appuyé sur une touche
 inputNom.addEventListener("keyup", validateForm);
@@ -14,6 +15,8 @@ inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputValidatePassword.addEventListener("keyup", validateForm);
+
+btnValidation.addEventListener("click", signupUser);
 
 function validateForm() {
     const nomOk = validateRequired(inputNom);
@@ -30,6 +33,7 @@ function validateForm() {
     }
 }
 
+// je crée une fonction pour valider les champs requis
 function validateRequired(input) {
     if (input.value != '') {
         //c'est ok
@@ -43,6 +47,39 @@ function validateRequired(input) {
         input.classList.remove("is-valid");
         return false;
     }
+}
+
+// je rajoute un event listener pour connecter à mon API
+function signupUser() {
+    let dataForm = new FormData(formSignup);
+
+    let name = dataForm.get("Nom");
+    // let firstname = dataForm.get("Prenom");
+    // let email = dataForm.get("Email");
+    // let password = dataForm.get("Password");
+
+    // const ?
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw = JSON.stringify({
+    "firstName": dataForm.get("Nom"),
+    "lastName": dataForm.get("Prenom"),
+    "email": dataForm.get("Email"),
+    "password": dataForm.get("Mdp")
+    });
+
+    let requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+    };
+
+    fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error('error', error));
 }
 
 function validateEmail(input) {
