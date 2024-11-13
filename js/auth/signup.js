@@ -49,7 +49,7 @@ function validateRequired(input) {
     }
 }
 
-// je rajoute un event listener pour connecter à mon API
+// je rajoute un event listener pour connecter à mon API et géré l'inscription
 function signupUser() {
     let dataForm = new FormData(formSignup);
 
@@ -77,9 +77,27 @@ function signupUser() {
     };
 
     fetch("http://127.0.0.1:8000/api/registration", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error('error', error));
+    // .then((response) => response.text())
+    .then((response) => 
+        {
+            // debugger;
+            if(response.ok){
+                return response.json();
+            }
+            else {
+                alert("Erreur lors de l'inscription");
+            }
+
+        })
+    .then((result) => 
+    {
+        //redirection vers la page de connexion après inscription
+        alert("Bravo "+dataForm.get("Prenom")+", Inscription réussie");
+        document.location.href = "/signin";
+        // console.log(result)
+    })
+    .catch((error) => console.log('error', error));
+    // .catch((error) => console.error(error));
 }
 
 function validateEmail(input) {
