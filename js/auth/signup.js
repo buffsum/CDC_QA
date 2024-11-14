@@ -71,7 +71,7 @@ function signupUser() {
     redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    fetch(apiUrl+"registration", requestOptions)
     // .then((response) => response.text())
     .then((response) => 
         {

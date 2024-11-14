@@ -9,8 +9,8 @@ function checkCredentials(){
     let dataForm = new FormData(formSignin);
 
     //Ici, il faudra appeler l'API pour vérifier les credentials en BDD
-    function signupUser() {
-        let dataForm = new FormData(formSignup);
+    // function signupUser() {
+        // let dataForm = new FormData(formSignup);
         
         // const ?
         let myHeaders = new Headers();
@@ -28,7 +28,8 @@ function checkCredentials(){
         redirect: "follow"
         };
     
-        fetch("http://127.0.0.1:8000/api/login", requestOptions)
+        // fetch("http://127.0.0.1:8000/api/login", requestOptions)
+        fetch(apiUrl+"login", requestOptions)
         .then((response) => 
             {
                 if(response.ok){
@@ -55,4 +56,4 @@ function checkCredentials(){
         .catch((error) => console.log('error', error));
         // .catch((error) => console.error(error));
     }
-}
+// }

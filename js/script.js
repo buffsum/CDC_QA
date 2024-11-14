@@ -2,7 +2,7 @@
 const tokenCookieName = "accesstoken";
 const roleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
-
+const apiUrl = "http://localhost:8000/api/";
 
 
 //**** Gestion des roles + hide****/
