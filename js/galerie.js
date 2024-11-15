@@ -1,10 +1,18 @@
 const galerieImg = document.getElementById("allImg");
 
 // ici récupérer les informations des images depuis la base de données et les ajouter dans ce innerHTML
-let myImg = getImg("titre", "../img/chef.jpg");
+let titre = 'Chef';
+let imgSrc = '../img/chef.jpg';
+
+let myImg = getImg(titre, imgSrc);
+
+
 galerieImg.innerHTML = myImg;
 
 function getImg(titre, urlImg) {
+    // sanitizeHtml permet de sécuriser le code HTML pour éviter les attaques XSS
+    titre = sanitizeHtml(titre);
+    urlImg = sanitizeHtml(urlImg);
     return `<div class="col pt-3"> 
             <div class="img-card">
                 <img src="${urlImg}" alt="Pain" class="w-100">
@@ -16,3 +24,4 @@ function getImg(titre, urlImg) {
             </div>
         </div>`;
 }
+

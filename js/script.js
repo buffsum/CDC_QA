@@ -112,6 +112,14 @@ function isConnected() {
 // }
 // ****** FIN de gestion des cookies ******
 
+// ****** Fonction pour sécuriser le code HTML ******
+function sanitizeHtml (text) {
+    const tempHtml = document.createElement('div');
+    tempHtml.textContent = text;
+    return tempHtml.innerHTML;
+}
+// ****** FIN de sécurisation du code HTML ******
+
 // ****** TEST de la connexion ******
 // if (isConnected()) {
 //     alert("Vous êtes connecté");
