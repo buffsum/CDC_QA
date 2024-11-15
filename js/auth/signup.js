@@ -87,7 +87,9 @@ function signupUser() {
     .then((result) => 
     {
         //redirection vers la page de connexion après inscription
-        alert("Bravo "+dataForm.get("Prenom")+", Inscription réussie");
+        // alert("Bravo "+dataForm.get("Prenom")+", Inscription réussie");
+        // alert(`Bravo ${dataForm.get("Prenom")}, Inscription réussie`);
+        alert("Bravo " + String(dataForm.get("Prenom")) + ", Inscription réussie");
         document.location.href = "/signin";
         // console.log(result)
     })
