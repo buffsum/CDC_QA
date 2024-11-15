@@ -1,7 +1,7 @@
 const galerieImg = document.getElementById("allImg");
 
 // ici récupérer les informations des images depuis la base de données et les ajouter dans ce innerHTML
-let titre = 'Chef';
+let titre = 'https://www.google.com';
 let imgSrc = '../img/chef.jpg';
 
 let myImg = getImg(titre, imgSrc);

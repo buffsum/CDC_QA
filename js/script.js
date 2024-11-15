@@ -4,6 +4,8 @@ const roleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 const apiUrl = "http://localhost:8000/api/";
 
+getInfoUser();
+
 
 //**** Gestion des roles + hide****/
 function getRole() {
@@ -99,17 +101,18 @@ function eraseCookie(name) {
 }
 
 function isConnected() {
-    return !(getToken() == null || getToken == undefined);
-}
-// ancien code :
-// {
-//     if (getToken() == null || getToken == undefined) {
-//         return false;
-//     }
-//     else {
-//         return true;
-//     }
+//     return !(getToken() == null || getToken == undefined);
 // }
+// // ancien code :
+{
+    if (getToken() == null || getToken == undefined) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+}
 // ****** FIN de gestion des cookies ******
 
 // ****** Fonction pour sécuriser le code HTML ******
@@ -121,10 +124,15 @@ function sanitizeHtml (text) {
 // ****** FIN de sécurisation du code HTML ******
 
 // ****** TEST de la connexion ******
-// if (isConnected()) {
-//     alert("Vous êtes connecté");
-// }
-// else {
-//     alert("Vous n'êtes pas connecté");
-// }
+if (isConnected()) {
+    alert("Vous êtes connecté");
+}
+else {
+    alert("Vous n'êtes pas connecté");
+}
 // ****** FIN de gestion des cookies ******
+
+// ****** Fonction pour récupérer les informations de l'utilisateur ******
+function getInfoUser {
+    console.log("getInfoUser");
+}
