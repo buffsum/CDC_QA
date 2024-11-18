@@ -3,9 +3,7 @@ const tokenCookieName = "accesstoken";
 const roleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 const apiUrl = "http://localhost:8000/api/";
-
-getInfoUser();
-
+getInfosUser();
 
 //**** Gestion des roles + hide****/
 function getRole() {
@@ -101,18 +99,17 @@ function eraseCookie(name) {
 }
 
 function isConnected() {
-//     return !(getToken() == null || getToken == undefined);
+    return !(getToken() == null || getToken == undefined);
+}
+// ancien code :
+// {
+//     if (getToken() == null || getToken == undefined) {
+//         return false;
+//     }
+//     else {
+//         return true;
+//     }
 // }
-// // ancien code :
-{
-    if (getToken() == null || getToken == undefined) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-}
 // ****** FIN de gestion des cookies ******
 
 // ****** Fonction pour sécuriser le code HTML ******
@@ -123,16 +120,40 @@ function sanitizeHtml (text) {
 }
 // ****** FIN de sécurisation du code HTML ******
 
-// ****** TEST de la connexion ******
-if (isConnected()) {
-    alert("Vous êtes connecté");
-}
-else {
-    alert("Vous n'êtes pas connecté");
-}
-// ****** FIN de gestion des cookies ******
 
-// ****** Fonction pour récupérer les informations de l'utilisateur ******
-function getInfoUser {
-    console.log("getInfoUser");
+function getInfosUser(){
+    console.log("getInfosUser");
+    let myHeaders = new Headers();
+    myHeaders.append("X-AUTH-TOKEN", getToken());
+
+    let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    fetch(apiUrl+"account/me", requestOptions)
+    .then(response =>{
+        if(response.ok){
+            return response.json();
+        }
+        else{
+            console.log("Impossible de récupérer les informations utilisateur");
+        }
+    })
+    .then(result => {
+        return result;
+    })
+    .catch(error =>{
+        console.error("erreur lors de la récupération des données utilisateur", error);
+    });
 }
+
+// ****** TEST de la connexion ******
+// if (isConnected()) {
+//     alert("Vous êtes connecté");
+// }
+// else {
+//     alert("Vous n'êtes pas connecté");
+// }
+// ****** FIN de gestion des cookies ******
